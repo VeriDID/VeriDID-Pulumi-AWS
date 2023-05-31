@@ -128,5 +128,10 @@ const argocdChart = new k8s.helm.v3.Chart("argocd", {
 // Export the name of the ArgoCD Namespace
 export const argoCDNamespace = argocdNamespace.metadata.name;
 
+const argocdApp = new k8s.apiextensions.CustomResource("afj-test-k8s-config", configArgoCD, { provider: k8sProvider, dependsOn: [argocdChart] }); // ensure ArgoCD chart is deployed before creating the application
+
+// Export the name of the ArgoCD Application
+export const argoCDAppName = argocdApp.metadata.name;
+
 // Create the Docker pull secret in your desired namespace
 createDockerSecret("afj-test-app", k8sProvider);
