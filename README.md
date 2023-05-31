@@ -41,6 +41,7 @@ To install the project, follow these steps:
 
 ```bash
 git clone <repository_url>
+```
 
 2. Navigate to the project directory:
 
