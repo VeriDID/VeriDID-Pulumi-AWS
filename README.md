@@ -76,10 +76,9 @@ kubectl port-forward -n argocd svc/argocd-server 8080:443
 ```
 10. Navigate to ArgoCD's web interface through the link provided.
 
-
 ## Resources
-[argocd to eks](https://pulumi.awsworkshop.io/additional-content/150_deploying_argocd_to_eks.html).
-[ArgoCD](https://argoproj.github.io/argo-cd/).
-[Pulumi EKS Cluster setup](https://pulumi.awsworkshop.io/50_eks_platform/20_provision_cluster/1_new_project.html). 
-[ArgoCD Introduction Video by Nana](https://www.youtube.com/watch?v=MeU5_k9ssrs). 
+- [Argocd to EKS](https://pulumi.awsworkshop.io/additional-content/150_deploying_argocd_to_eks.html)
+- [ArgoCD](https://argoproj.github.io/argo-cd/)
+- [Pulumi EKS Cluster setup](https://pulumi.awsworkshop.io/50_eks_platform/20_provision_cluster/1_new_project.html)
+- [ArgoCD Introduction Video by Nana](https://www.youtube.com/watch?v=MeU5_k9ssrs)
 
