@@ -30,53 +30,42 @@ To install and deploy the project, follow these steps:
 
 ```bash
 git clone <repository_url>
-
-
-
-## Installing Project
-
-To install the project, follow these steps:
-
-1. Clone the repository:
-
-```bash
-git clone <repository_url>
 ```
 
 2. Navigate to the project directory:
 
 ```bash
 cd eriDID-Pulumi-AWS
-
+```
 3. Install the dependencies:
 
 ```bash
 npm install
-
+```
 4. Set up your AWS credentials and region:
 
 ```bash
 export AWS_ACCESS_KEY_ID=<your-key>
 export AWS_SECRET_ACCESS_KEY=<your-secret>
 export AWS_REGION=<aws-region>  # for example, us-west-2
-
+```
 5. Run pulumi up to preview and deploy changes:
 
 ```bash
 pulumi up
-
+```
 
 6. Once the deployment is successful, fetch the kubeconfig file for the new cluster:
 
 ```bash
 pulumi stack output kubeconfig | tee ~/.kube/config
-
+```
 
 7. Verify that your local kubectl can communicate with the new cluster:
 
 ```bash
 kubectl get nodes
-
+```
 
 8. Open Pulumi UI in a web browser via the link displayed in your console to inspect your cluster details.
 
@@ -84,9 +73,8 @@ kubectl get nodes
 
 ```bash
 kubectl port-forward -n argocd svc/argocd-server 8080:443
-
-10. Navigate to ArgoCD's web interface through the link provided. Your initial login credentials can be found <link to argocd docs>.
 ```
+10. Navigate to ArgoCD's web interface through the link provided.
 
 ## Project Overview
 This Pulumi project creates an EKS cluster and deploys an ArgoCD application onto it. The EKS cluster is created within a VPC with 2 availability zones, using a specific CIDR block. The cluster uses "t2.medium" EC2 instances with a minimum of 1 and a maximum of 2 instances.
