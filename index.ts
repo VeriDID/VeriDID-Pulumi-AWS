@@ -3,6 +3,8 @@ import * as aws from "@pulumi/aws";
 import * as awsx from "@pulumi/awsx";
 import * as eks from "@pulumi/eks";
 import * as k8s from "@pulumi/kubernetes";
+import { configArgoCD } from "./configArgoCD";
+import { createDockerSecret } from "./dockerSecret";
 
 /***************************************************EKS CLUSTER***********************************************************************/
 /*EKS Cluster Setup:
@@ -125,3 +127,6 @@ const argocdChart = new k8s.helm.v3.Chart("argocd", {
 
 // Export the name of the ArgoCD Namespace
 export const argoCDNamespace = argocdNamespace.metadata.name;
+
+// Create the Docker pull secret in your desired namespace
+createDockerSecret("afj-test-app", k8sProvider);
