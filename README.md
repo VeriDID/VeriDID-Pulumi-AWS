@@ -76,20 +76,10 @@ kubectl port-forward -n argocd svc/argocd-server 8080:443
 ```
 10. Navigate to ArgoCD's web interface through the link provided.
 
-## Project Overview
-This Pulumi project creates an EKS cluster and deploys an ArgoCD application onto it. The EKS cluster is created within a VPC with 2 availability zones, using a specific CIDR block. The cluster uses "t2.medium" EC2 instances with a minimum of 1 and a maximum of 2 instances.
-
-Four AWS policies are attached to the worker nodes for the correct functioning of the cluster:
-
-Amazon EKS Worker Node Policy
-Amazon EKS CNI Policy
-Amazon EC2 Container Registry Read Only Policy
-Amazon SSM Managed Instance Core Policy
 
 ## Resources
-Pulumi Documentation
-ArgoCD Documentation
-AWS CLI Configuration
-Kubectl Installation
-ArgoCD Introduction Video by Nana
+[Pulumi] argocd to eks(https://www.pulumi.com/](https://pulumi.awsworkshop.io/additional-content/150_deploying_argocd_to_eks.html) 
+[ArgoCD](https://argoproj.github.io/argo-cd/ 
+[Pulumi EKS Cluster setup](https://www.pulumi.com/](https://pulumi.awsworkshop.io/50_eks_platform/20_provision_cluster/1_new_project.html) 
+[ArgoCD Introduction Video by Nana]([https://www.pulumi.com/](https://www.youtube.com/watch?v=MeU5_k9ssrs)) 
 
