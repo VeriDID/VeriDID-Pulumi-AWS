@@ -9,6 +9,8 @@
         "@pulumi/awsx": "^1.0.2",
         "@pulumi/eks": "^1.0.2",
         "@pulumi/kubernetes": "^3.28.1",
-        "@pulumi/pulumi": "^3.0.0"
+        "@pulumi/kubernetes-cert-manager": "^0.0.5",
+        "@pulumi/pulumi": "^3.0.0",
+        "dotenv": "^16.1.4"
     }
 }
