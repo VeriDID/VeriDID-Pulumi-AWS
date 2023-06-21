@@ -6,7 +6,7 @@
     height="250px"
   />
 </p>
-
+<h1 align="center"><b>Aries Framework JavaScript</b></h1>
 <p align="center">
    <a href="https://www.typescriptlang.org/"
     ><img
