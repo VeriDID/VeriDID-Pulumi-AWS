@@ -1,3 +1,11 @@
+<p align="center">
+  <br />
+  <img
+    alt="VeriDID logo"
+    src="[https://raw.githubusercontent.com/hyperledger/aries-framework-javascript/aa31131825e3331dc93694bc58414d955dcb1129/images/aries-logo.png](https://github.com/VeriDID/afj-test/blob/main/Logo.png)"
+    height="250px"
+  />
+</p>
 # VeriDID Infrastructure with Pulumi and AWS
 
 ## Project Overview
