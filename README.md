@@ -6,7 +6,7 @@
     height="250px"
   />
 </p>
-<h1 align="center"><b>Aries Framework JavaScript</b></h1>
+<h1 align="center"><b>VeriDID Infrastructure with Pulumi and AWS</b></h1>
 <p align="center">
    <a href="https://www.typescriptlang.org/"
     ><img
@@ -14,7 +14,6 @@
       src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg"
   /></a>
   
-# VeriDID Infrastructure with Pulumi and AWS
 
 ## Project Overview
 
