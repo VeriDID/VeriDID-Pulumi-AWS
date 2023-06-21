@@ -6,6 +6,14 @@
     height="250px"
   />
 </p>
+
+<p align="center">
+   <a href="https://www.typescriptlang.org/"
+    ><img
+      alt="typescript"
+      src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg"
+  /></a>
+  
 # VeriDID Infrastructure with Pulumi and AWS
 
 ## Project Overview
