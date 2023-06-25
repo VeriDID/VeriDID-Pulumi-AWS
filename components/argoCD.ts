@@ -1,9 +1,8 @@
 import * as k8s from "@pulumi/kubernetes";
 import * as pulumi from "@pulumi/pulumi";
-import { createDockerSecret } from "./dockerSecret";
-import { createCognitoSecret } from "./cognitoSecret";
+import { createDockerSecret } from "./secrets/dockerSecret";
+import { createCognitoSecret } from "./secrets/cognitoSecret";
 import { configArgoCD } from "../config/configArgoCD";
-import { setupAwsLoadBalancerController } from "../components/awsLoadBalancerController";
 
 export function setupArgoCD(k8sProvider: k8s.Provider) {
     // Create a Kubernetes namespace for ArgoCD

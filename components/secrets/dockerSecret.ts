@@ -4,7 +4,7 @@ import * as k8s from "@pulumi/kubernetes";
 // Load the GitHub token from Pulumi config
 const config = new pulumi.Config();
 const githubToken = config.requireSecret("githubToken");
-const dockerRegistryUsername = config.require("dockerRegistryUsername"); // assuming you set a username as well
+const dockerRegistryUsername = config.require("dockerRegistryUsername"); 
 
 // Create Docker registry credentials config file
 const dockerConfigFile = pulumi

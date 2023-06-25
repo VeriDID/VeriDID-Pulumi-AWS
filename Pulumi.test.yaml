@@ -1,10 +1,13 @@
 config:
-  veridid-cluster:cognitoClientId:
-    secure: AAABAFZURJT0iumkQUBVu/qUZpxDZ7zL5i2hENg3Kx0bx+aRrKDrvKcgr5UkUoFC8madcNzn0eiJ4w==
-  veridid-cluster:cognitoRegion:
-    secure: AAABAOON9gqGXnZIlF777NWRvE+dMuhWmmP+KaPzGVnI3XX1bcBRN7vcuEo=
-  veridid-cluster:cognitoUserPoolId:
-    secure: AAABABH7aoRU6xXHDqIptIA/fFL0HTFYuOrzebqiQwU88InIFsxPGZobw6z7dLT0tPu3u/Pe
+  veridid-cluster:AWS_ACCOUNT_ID:
+    secure: AAABAPd9FHK0PlMeVQIo7hnbmA1wkRc+VGiqgZWIp/4Cs3kFBPVb7w5fY5Y=
+  veridid-cluster:AWS_COGNITO_CLIENT_ID:
+    secure: AAABAA3NSNRRBnoBUjtByUX6H+S0eVzzx6Ibmj9UfwREbdBdpIsIeeKvhYOiI4VuUw6Es6rWJiJXhA==
+  veridid-cluster:AWS_COGNITO_USER_POOL_ID:
+    secure: AAABAA457NcTgU4xeviTbeftPDF3EotQOmgaJ95whU/xdZX2G5vKAKORtuXSuz33Xu1+xYEx
+  veridid-cluster:AWS_REGION:
+    secure: AAABACgmQCmAXybWJDS9jAQJOuRwfcsZYb7jKHoaXfmqarg0Ny9+C3gbePM=
+  veridid-cluster:NAME: veridid-nas
   veridid-cluster:dockerRegistryUsername: nas2020
   veridid-cluster:githubToken:
-    secure: AAABALAET9YP7+StL9BrQnQupGZKfqVA77wGgd+7zSJCoqRNJYNVfLyEHoTA/RoBMLLyohJjOpJvoNdWoTeEw4l28qNrpglg
+    secure: AAABANTdae4+47TTLN7jR4xvqexQiMIT90/6MQbhNAlCoNw7LqTyJHDaKVEY52BFmZlyGBd3TTHXQBvQ91qghJ8fM2RLJkLq
