@@ -1,4 +1,19 @@
-# VeriDID Infrastructure with Pulumi and AWS
+<p align="center">
+  <br />
+  <img
+    alt="VeriDID logo"
+    src="https://github.com/VeriDID/afj-test/blob/main/Logo.png"
+    height="250px"
+  />
+</p>
+<h1 align="center"><b>VeriDID Infrastructure with Pulumi and AWS</b></h1>
+<p align="center">
+   <a href="https://www.typescriptlang.org/"
+    ><img
+      alt="typescript"
+      src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg"
+  /></a>
+  
 
 ## Project Overview
 
