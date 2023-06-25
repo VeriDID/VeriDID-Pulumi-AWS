@@ -1,6 +1,7 @@
-// ingress.ts
+import * as pulumi from "@pulumi/pulumi";
 import * as k8sNetworking from "@pulumi/kubernetes/networking/v1";
 import * as k8s from "@pulumi/kubernetes";
+import * as aws from "@pulumi/aws";
 
 export function createIngress(provider: k8s.Provider, argocdApp:k8s.apiextensions.CustomResource) {
     return new k8sNetworking.Ingress("afj-test-ingress-pulumi", {
@@ -37,4 +38,33 @@ export function createIngress(provider: k8s.Provider, argocdApp:k8s.apiextension
             ],
         },
     }, { provider: provider,dependsOn: [argocdApp] });
+}
+
+
+
+
+export function getLoadBalancerName(ingress: k8s.networking.v1.Ingress) {
+    return pulumi.all([ingress.status.loadBalancer.ingress])
+    .apply(([ingressStatus]) => {
+        if (ingressStatus && ingressStatus[0] && ingressStatus[0].hostname) {
+            const dnsParts = ingressStatus[0].hostname.split('.');
+            const lbNameAndId = dnsParts[0].replace('internal-', '');
+            const lbNameParts = lbNameAndId.split('-');
+            lbNameParts.pop(); 
+            const lbName = lbNameParts.join('-'); 
+            return lbName;
+        }
+        throw new Error('Failed to get the load balancer name.');
+    });
+}
+
+
+export function getListenerArn(listenerPort: number, loadBalancerArn: string) {
+
+    const loadBalancerListenerARN = pulumi.output(aws.lb.getListener({
+        loadBalancerArn: loadBalancerArn,
+        port: listenerPort,
+    }));
+
+        return loadBalancerListenerARN
 }

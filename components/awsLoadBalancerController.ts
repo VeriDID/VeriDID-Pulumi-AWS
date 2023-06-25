@@ -1,18 +1,20 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
 import * as k8s from "@pulumi/kubernetes";
-import { config } from 'dotenv';
+//import { config } from 'dotenv';
 import * as fs from 'fs';
 import { clusterName, vpcId, clusterOidcProvider, clusterOidcProviderArn } from '../index'
 
 // Function setupAwsLoadBalancerController is used to create and setup an AWS Load Balancer Controller on a provided Amazon EKS cluster.
 // This function will create an IAM Role with necessary permissions, a Kubernetes namespace and service account.
 // Finally, it will deploy the AWS Load Balancer Controller using a Helm Chart.
-config();
+//config();
+const config = new pulumi.Config();
+
 export function setupAwsLoadBalancerController(k8sProvider: k8s.Provider) {
     const namespaceName = "kube-system";
     const serviceAccountName = `system:serviceaccount:${namespaceName}:lb-aws-load-balancer-controller`;
-    const region = process.env.REGION || 'ca-central-1';
+    const region = config.requireSecret("AWS_REGION")|| 'ca-central-1';
 
     if (!clusterOidcProvider || !clusterOidcProviderArn) {
         throw new Error("Cluster OIDC provider information not available.");
