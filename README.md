@@ -28,6 +28,37 @@ Four specific AWS policies are attached to the worker nodes to ensure the correc
 * Amazon EC2 Container Registry Read Only Policy
 * Amazon SSM Managed Instance Core Policy
 
+# Project Structure
+
+The **VeriDID-Pulumi-AWS** project contains the following folders and files:
+
+<pre>
+📁 <b>VeriDID-Pulumi-AWS</b>
+├── 📝 index.ts
+│
+├── 📁 <b>1_components</b>
+│   ├── 📝 apiGateway.ts
+│   ├── 📝 argoCD.ts
+│   ├── 📝 awsLoadBalancerController.ts
+│   ├── 📝 eksCluster.ts
+│   ├── 📝 ingress.ts
+│   ├── 📝 k8sProvider.ts
+│   ├── 📝 securityGroup.ts
+│   └── 📁 secrets
+│       ├── 📝 cognitoSecret.ts
+│       └── 📝 dockerSecret.ts
+│   
+├── 📁 <b>2_config</b>
+│   └── 📝 configArgoCD.ts
+│   
+└── 📁 <b>3_files</b>
+    ├── 📝 awsLoadBalancerController_policy.json
+    └── 📝 veridid-nas-cluster-PolicyELBPermissions.json
+</pre>
+
+![Flow Diagram](https://github.com/Nas2020/VeriDID-Pulumi-AWS/blob/main/Veridid-Pulumi-Process-Flow.png)
+
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -44,26 +75,44 @@ To install and deploy the project, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/VeriDID/VeriDID-Pulumi-AWS.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd eriDID-Pulumi-AWS
+cd veriDID-Pulumi-AWS
 ```
 3. Install the dependencies:
 
 ```bash
 npm install
 ```
-4. Set up your AWS credentials and region:
+4. Set up credentials and and secrets:
 
 ```bash
 export AWS_ACCESS_KEY_ID=<your-key>
 export AWS_SECRET_ACCESS_KEY=<your-secret>
-export AWS_REGION=<aws-region>  # for example, us-west-2
+export AWS_REGION=<aws-region> 
 ```
+
+```bash
+pulumi config set NAME <value>
+pulumi config set dockerRegistryUsername <value>
+pulumi config set --secret githubToken <github-token>
+```
+
+```bash
+pulumi config set --secret AWS_COGNITO_USER_POOL_ID <value>
+pulumi config set --secret AWS_COGNITO_CLIENT_ID <value>
+pulumi config set --secret AWS_REGION <aws-region>
+pulumi config set --secret AWS_ACCOUNT_ID <aws-account-id>
+```
+
+```bash
+Rename .env.sample to .env and fill in the required environment variables
+```
+
 5. Run pulumi up to preview and deploy changes:
 
 ```bash
