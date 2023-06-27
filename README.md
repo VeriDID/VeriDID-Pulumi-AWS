@@ -56,7 +56,7 @@ The **VeriDID-Pulumi-AWS** project contains the following folders and files:
     └── 📝 veridid-nas-cluster-PolicyELBPermissions.json
 </pre>
 
-![Flow Diagram](./Veridid-Pulumi-Process-Flow)
+![Flow Diagram](https://github.com/Nas2020/VeriDID-Pulumi-AWS/blob/main/Veridid-Pulumi-Process-Flow.png)
 
 
 ## Prerequisites
@@ -75,7 +75,7 @@ To install and deploy the project, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/VeriDID/VeriDID-Pulumi-AWS.git
 ```
 
 2. Navigate to the project directory:
