@@ -45,8 +45,6 @@ const lbNameOutput = getLoadBalancerName(afjTestIngress);
 
 let vpcLinkSecurityGroup = createVpcLinkSecurityGroup("veridid-nas-vpclink", vpcId);
 
-// Use the returned Security Group ID
-//console.log(vpcLinkSecurityGroup.securityGroupId);
 const securityGroupId = vpcLinkSecurityGroup?.securityGroupId
 const securityGroupIds: pulumi.Output<string>[] = [securityGroupId];
 
@@ -65,17 +63,12 @@ const loadBalancerListenerARN = lbArnOutput.apply(arn => {
 });
 const loadBalancerListenerArnString = loadBalancerListenerARN.apply(listener => listener.arn);
 
-/* ************************************************************************************************ */
-
 const subnetIdsOutput: pulumi.Output<string[]> = subnetIds || pulumi.output([]);
 const apiGateway = loadBalancerListenerArnString.apply(listenerarn => {
     return createApiGatewayWithVpcLink('veridid-nas-pulumi', listenerarn, privateSubnetIds, securityGroupIds)
 });
 
 
-
-
-// Export EKS Cluster and ArgoCD details.
 export {
     vpcId,
     kubeconfig,
