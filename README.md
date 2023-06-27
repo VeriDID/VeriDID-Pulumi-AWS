@@ -2,7 +2,7 @@
   <br />
   <img
     alt="VeriDID logo"
-    src="https://github.com/VeriDID/afj-test/blob/main/Logo.png"
+    src="https://github.com/VeriDID/VeriDID-Pulumi-AWS/blob/main/VeriDID_Logo.png"
     height="250px"
   />
 </p>
