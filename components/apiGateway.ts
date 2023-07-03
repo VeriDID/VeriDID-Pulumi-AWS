@@ -21,6 +21,12 @@ if (!cognitoUserPoolID) {
 export const createApiGatewayWithVpcLink = (name: string, loadBalancerListenerARN: string, subnetIdsOutput: pulumi.Output<string[]>, securityGroupIds: pulumi.Output<string>[]) => {
     const api = new aws.apigatewayv2.Api(`${name}-api`, {
         protocolType: "HTTP",
+        tags: {
+            "Name": "veridid-nas/API-Gateway",
+            "Project": "veridid-pulumi-AWS",
+            "Environment": "Dev",
+            "EKScluster": "veridi-nas",
+        }
     });
 
     const vpcLink = new aws.apigatewayv2.VpcLink(`${name}-vpc-link`, {
@@ -61,13 +67,6 @@ export const createApiGatewayWithVpcLink = (name: string, loadBalancerListenerAR
         routeKey: "GET /",
         target: pulumi.interpolate`integrations/${httpIntegrationId}`,
     }, { dependsOn: [httpIntegration] });
-
-    //  // For swagger
-    //  new aws.apigatewayv2.Route(`${name}-route-/api`, {
-    //     apiId: api.id,
-    //     routeKey: "GET /api#",
-    //     target: pulumi.interpolate`integrations/${httpIntegrationId}`,
-    // },{ dependsOn: [httpIntegration] });
 
     // Define post: auth/log-in route
     new aws.apigatewayv2.Route(`${name}-route-auth-log-in`, {
