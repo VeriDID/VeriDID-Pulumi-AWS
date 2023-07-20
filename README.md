@@ -28,7 +28,7 @@ Four specific AWS policies are attached to the worker nodes to ensure the correc
 * Amazon EC2 Container Registry Read Only Policy
 * Amazon SSM Managed Instance Core Policy
 
-# Project Structure
+## Project Structure and Process Flow
 
 The **VeriDID-Pulumi-AWS** project contains the following folders and files:
 
@@ -56,7 +56,10 @@ The **VeriDID-Pulumi-AWS** project contains the following folders and files:
     └── 📝 veridid-nas-cluster-PolicyELBPermissions.json
 </pre>
 
-![Flow Diagram](https://github.com/Nas2020/VeriDID-Pulumi-AWS/blob/main/Veridid-Pulumi-Process-Flow.png)
+<p align="center">
+  <img src="https://github.com/Nas2020/VeriDID-Pulumi-AWS/blob/main/Veridid-Pulumi-Process-Flow.png" width="500px">
+</p>
+
 
 
 ## Prerequisites
